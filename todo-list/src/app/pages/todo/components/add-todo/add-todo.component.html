@@ -1,0 +1,19 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <ion-item class="ion-no-padding"> 
+        <ion-label position="floating" class="floating-label">Název připomínky</ion-label>
+        <ion-input type="text" name="title" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+        <ion-label position="floating" class="floating-label">Popis</ion-label>
+        <ion-textarea name="description" formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+        <ion-label>Datum do</ion-label>
+        <ion-datetime placeholder="vyberte datum" formControlName="endDate"></ion-datetime>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+        <ion-label>Začátek</ion-label>
+        <ion-datetime display-format="HH:mm" picker-format="HH:mm" formControlName="endTime"></ion-datetime>
+    </ion-item>
+    <ion-button color="primary" type="submit" style="margin-top: 25px">Vytvořit</ion-button>
+</form>

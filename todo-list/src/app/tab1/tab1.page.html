@@ -1,17 +1,16 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- 
+  <ion-header>
     <ion-toolbar>
-      <ion-segment [value]="currentView" (ionChange) = "onCurrentViewChange($event)">
-        <ion-segment-button value="0">Denní</ion-segment-button>
-        <ion-segment-button value="1">Měsíční</ion-segment-button>
+      <ion-segment [value]="currentView" (ionChange)="onCurrentViewChange($event)">
+        <ion-segment-button value="0">Úkoly</ion-segment-button>
+        <ion-segment-button value="1">Přidat úkol</ion-segment-button>
       </ion-segment>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
 
-
-  <ion-slides class="ion-slide-height" (ionSlideDidChange)="slideChanged()">
-
+  <!-- <ion-slides class="ion-slide-height" (ionSlideDidChange)="slideChanged()">
     <ion-slide>
       <div class="slide">
         <img src="./slide-1.png" />
@@ -20,14 +19,9 @@
           demonstration of proper code use.</p>
       </div>
     </ion-slide>
-
     <ion-slide>
-      <img src="./slide-2.png" />
-      <h2>What is Ionic?</h2>
-      <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with
-        web technologies like HTML, CSS, and JavaScript.</p>
+      <app-add-todo class="add-todo-wrapper"></app-add-todo>
     </ion-slide>
-
-  </ion-slides>
-
+  </ion-slides> -->
+  <app-todo-list></app-todo-list>
 </ion-content>

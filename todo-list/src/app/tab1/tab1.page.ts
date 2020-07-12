@@ -10,6 +10,8 @@ import { TaskSlideEnum } from '../core/models/task-slide.enum';
 export class Tab1Page implements AfterViewInit {
 
   @ViewChild(IonSlides) slides: IonSlides;
+  @ViewChild('refresherRef') refresherRef;
+
 
   currentView = TaskSlideEnum.Daily;
 
@@ -32,5 +34,14 @@ export class Tab1Page implements AfterViewInit {
     this.currentView = (Number(event.detail.value));
 
     this.slides.slideTo(this.currentView, 400);
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      this.refresherRef.complete();
+    }, 2000);
   }
 }
