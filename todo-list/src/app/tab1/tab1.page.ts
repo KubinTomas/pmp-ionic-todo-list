@@ -13,6 +13,8 @@ export class Tab1Page implements AfterViewInit {
   @ViewChild('refresherRef') refresherRef;
 
 
+  filterDate: Date;
+
   currentView = TodoSlideEnum.Daily;
 
   constructor() { }
@@ -43,5 +45,13 @@ export class Tab1Page implements AfterViewInit {
       console.log('Async operation has ended');
       this.refresherRef.complete();
     }, 2000);
+  }
+
+  onFilterDateChange() {
+
+  }
+
+  removeFilters(){
+    this.filterDate = null;
   }
 }

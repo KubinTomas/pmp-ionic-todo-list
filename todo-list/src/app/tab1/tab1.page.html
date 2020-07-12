@@ -1,10 +1,20 @@
 <ion-content [fullscreen]="true">
-  <section class="list-padding">
-    <ion-icon name="calendar-outline"  style="font-size: 2em"></ion-icon>
-    <ion-icon name="checkmark-circle-outline" style="font-size: 2em; margin-left: 15px;"></ion-icon>
-    <ion-icon name="ellipse-outline" style="font-size: 2em;  margin-left: 15px;"></ion-icon>
-    <ion-icon name="pricetags-outline" style="font-size: 2em;  margin-left: 15px;"></ion-icon>
-    <ion-icon name="refresh-outline" style="font-size: 2em; float: right;"></ion-icon>
+  <section class="list-padding filter-header">
+    <ion-icon name="calendar-outline" (click)="picker.open()">
+      <ion-datetime #picker pickerFormat="DD MMMM YYYY"  [(ngModel)]="filterDate" (ionChange)="onFilterDateChange()"></ion-datetime>
+      <ion-icon name="calendar"></ion-icon>
+    </ion-icon>
+    {{filterDate}}
+<!-- 
+    <button ion-button icon-right (click)="picker.open()">
+      <ion-datetime #picker pickerFormat="DD MMMM YYYY" [min]="datePickerMin" [(ngModel)]="datePicker" (ionChange)="changeDate()"></ion-datetime>
+      <ion-icon name="calendar"></ion-icon>
+    </button> -->
+
+    <ion-icon name="checkmark-circle-outline" style="margin-left: 15px;"></ion-icon>
+    <ion-icon name="ellipse-outline" style="margin-left: 15px;"></ion-icon>
+    <ion-icon name="pricetags-outline" style="margin-left: 15px;"></ion-icon>
+    <ion-icon name="refresh-outline" style="float: right;" (click) = "removeFilters()"></ion-icon>
   </section>
   <section>
     <app-todo-list></app-todo-list>
