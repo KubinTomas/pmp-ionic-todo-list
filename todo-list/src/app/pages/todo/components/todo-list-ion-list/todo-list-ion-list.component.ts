@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { TodoDetailComponent } from '../todo-detail/todo-detail.component';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TodoModel } from 'src/app/core/models/todo.model';
+import { TodoDetailComponent } from '../todo-detail/todo-detail.component';
 
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  selector: 'app-todo-list-ion-list',
+  templateUrl: './todo-list-ion-list.component.html',
+  styleUrls: ['./todo-list-ion-list.component.scss']
 })
-export class TodoListComponent implements OnInit {
+export class TodoListIonListComponent implements OnInit {
+
+  @Input() title;
 
   constructor(public modalController: ModalController) { }
 

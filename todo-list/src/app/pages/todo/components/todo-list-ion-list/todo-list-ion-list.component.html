@@ -1,0 +1,25 @@
+<ion-list class="list-padding">
+    <ion-list-header  class="ion-no-padding">
+        {{title}}
+    </ion-list-header>
+    <ion-item class="ion-no-padding pl-10" (click)="onItemClick()">
+        <ion-note slot="start" (click)="$event.stopPropagation()">
+            <ion-checkbox></ion-checkbox>
+        </ion-note>
+        <ion-label>
+            Pokémon Yellow asd asd asd asd asd s
+        </ion-label>
+        <ion-note slot="end" color="danger">99</ion-note>
+    </ion-item>
+    <ion-item class="ion-no-padding pl-10" (click)="onItemClick()">
+        <ion-note slot="start" (click)="$event.stopPropagation()">
+            <ion-checkbox [checked] = "true"></ion-checkbox>
+        </ion-note>
+        <ion-label>
+            Pokémon Yellow asd asd asd asd asd s
+        </ion-label>
+        <ion-note slot="end" color="danger">
+            <ion-icon name="archive-outline"></ion-icon>
+        </ion-note>
+    </ion-item>
+</ion-list>

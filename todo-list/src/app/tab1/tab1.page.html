@@ -1,27 +1,12 @@
 <ion-content [fullscreen]="true">
-  <!-- 
-  <ion-header>
-    <ion-toolbar>
-      <ion-segment [value]="currentView" (ionChange)="onCurrentViewChange($event)">
-        <ion-segment-button value="0">Úkoly</ion-segment-button>
-        <ion-segment-button value="1">Přidat úkol</ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>
-  </ion-header> -->
-
-
-  <!-- <ion-slides class="ion-slide-height" (ionSlideDidChange)="slideChanged()">
-    <ion-slide>
-      <div class="slide">
-        <img src="./slide-1.png" />
-        <h2>Welcome</h2>
-        <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a
-          demonstration of proper code use.</p>
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <app-add-todo class="add-todo-wrapper"></app-add-todo>
-    </ion-slide>
-  </ion-slides> -->
-  <app-todo-list></app-todo-list>
+  <section class="list-padding">
+    <ion-icon name="calendar-outline"  style="font-size: 2em"></ion-icon>
+    <ion-icon name="checkmark-circle-outline" style="font-size: 2em; margin-left: 15px;"></ion-icon>
+    <ion-icon name="ellipse-outline" style="font-size: 2em;  margin-left: 15px;"></ion-icon>
+    <ion-icon name="pricetags-outline" style="font-size: 2em;  margin-left: 15px;"></ion-icon>
+    <ion-icon name="refresh-outline" style="font-size: 2em; float: right;"></ion-icon>
+  </section>
+  <section>
+    <app-todo-list></app-todo-list>
+  </section>
 </ion-content>

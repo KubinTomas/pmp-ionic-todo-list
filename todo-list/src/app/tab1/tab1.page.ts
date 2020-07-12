@@ -1,6 +1,6 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import { TaskSlideEnum } from '../core/models/task-slide.enum';
+import { TodoSlideEnum } from '../core/models/todo-slide.enum';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +13,7 @@ export class Tab1Page implements AfterViewInit {
   @ViewChild('refresherRef') refresherRef;
 
 
-  currentView = TaskSlideEnum.Daily;
+  currentView = TodoSlideEnum.Daily;
 
   constructor() { }
 

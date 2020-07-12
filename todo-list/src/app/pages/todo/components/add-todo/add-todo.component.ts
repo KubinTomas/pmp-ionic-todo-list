@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { ToastController } from '@ionic/angular';
 import { ToastService } from 'src/app/core/services/toast.service';
-import { TaskModel } from 'src/app/core/models/task.model';
+import { TodoModel } from 'src/app/core/models/todo.model';
 
 @Component({
   selector: 'app-add-todo',
@@ -38,7 +38,7 @@ export class AddTodoComponent {
     this.addTask(this.todoForm.value);
   }
 
-  async addTask(task: TaskModel) {
+  async addTask(task: TodoModel) {
     await this.toastService.presentToast('Úkol vytvořen');
 
     this.buildForm();
