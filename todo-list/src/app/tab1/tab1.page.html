@@ -1,17 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1 WE</ion-title>
+      <ion-segment [value]="currentView" (ionChange) = "onCurrentViewChange($event)">
+        <ion-segment-button value="0">Denní</ion-segment-button>
+        <ion-segment-button value="1">Měsíční</ion-segment-button>
+      </ion-segment>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+
+  <ion-slides class="ion-slide-height" (ionSlideDidChange)="slideChanged()">
+
+    <ion-slide>
+      <div class="slide">
+        <img src="./slide-1.png" />
+        <h2>Welcome</h2>
+        <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a
+          demonstration of proper code use.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./slide-2.png" />
+      <h2>What is Ionic?</h2>
+      <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with
+        web technologies like HTML, CSS, and JavaScript.</p>
+    </ion-slide>
+
+  </ion-slides>
+
 </ion-content>
