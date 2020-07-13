@@ -17,6 +17,6 @@ import { TodoListIonListComponent } from './components/todo-list-ion-list/todo-l
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [AddTodoComponent, TodoListComponent]
+  exports: [AddTodoComponent, TodoListComponent, TodoListIonListComponent]
 })
 export class TodoModule { }

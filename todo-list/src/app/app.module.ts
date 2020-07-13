@@ -10,11 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoModule } from './pages/todo/todo.module';
 import { IonicGestureConfig } from './core/utils/ionic-gesture-config.util';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, TodoModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, TodoModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,

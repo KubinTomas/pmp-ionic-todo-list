@@ -1,8 +1,19 @@
-.list{
+.list {
     // background-color: #f8fbfc;
 
-    ion-item{
+    ion-item {
         margin: 5px;
     }
 }
 
+.task-check-line {
+    height: 1px;
+    background: black;
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+}
+.task-done{
+    opacity: 0.5;
+}

@@ -1,6 +1,7 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 import { TodoSlideEnum } from '../core/models/todo-slide.enum';
+import { TodoListComponent } from '../pages/todo/components/todo-list/todo-list.component';
 
 @Component({
   selector: 'app-tab1',
@@ -11,7 +12,7 @@ export class Tab1Page implements AfterViewInit {
 
   @ViewChild(IonSlides) slides: IonSlides;
   @ViewChild('refresherRef') refresherRef;
-
+  @ViewChild(TodoListComponent) todoListComponent: TodoListComponent;
 
   filterDate: Date;
 
@@ -20,9 +21,15 @@ export class Tab1Page implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
-    console.log(this.slides);
   }
 
+
+  ionViewWillEnter() {
+    if (this.todoListComponent) {
+      // this.todoListComponent.removeFilters();
+      this.todoListComponent.getTodoList();
+    }
+  }
 
   slideChanged() {
     const currentIndexPromise = this.slides.getActiveIndex();
@@ -51,7 +58,7 @@ export class Tab1Page implements AfterViewInit {
 
   }
 
-  removeFilters(){
+  removeFilters() {
     this.filterDate = null;
   }
 }

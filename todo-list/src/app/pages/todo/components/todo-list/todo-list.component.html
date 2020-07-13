@@ -1,5 +1,29 @@
-<app-todo-list-ion-list title="Dnes"></app-todo-list-ion-list>
-<app-todo-list-ion-list title="Zítra"></app-todo-list-ion-list>
-<app-todo-list-ion-list title="Následující dny"></app-todo-list-ion-list>
+<section class="list-padding filter-header">
+    <ion-icon name="calendar-outline" (click)="picker.open()" [class.active]="filterDate !== null">
+        <ion-datetime #picker pickerFormat="DD MMMM YYYY" [(ngModel)]="filterDate"
+            (ionChange)="onFilterDateChange($event)" (ionCancel)="onFilterDateCancel()">
+        </ion-datetime>
+        <ion-icon name="calendar"></ion-icon>
+    </ion-icon>
+
+
+    <ion-icon name="checkmark-circle-outline" style="margin-left: 15px;" (click)="onShowCheckedChange(true)"
+        [class.active]="showChecked === true"></ion-icon>
+    <ion-icon name="ellipse-outline" style="margin-left: 15px;" (click)="onShowCheckedChange(false)"
+        [class.active]="showChecked === false"></ion-icon>
+    <ion-icon name="sync-circle-outline" style="margin-left: 15px;" (click)="onShowCheckedChange(null)"
+        [class.active]="showChecked === null"></ion-icon>
+    <ion-icon name="pricetags-outline" style="margin-left: 15px;"></ion-icon>
+    <ion-icon name="refresh-outline" style="float: right;" (click)="removeFilters()"></ion-icon>
+</section>
+
+<section *ngIf="!filterDate">
+    <app-todo-list-ion-list [todoList]="todayTodoList" title="Dnes" (onItemArchiveEvent) = "onItemArchive($event)"></app-todo-list-ion-list>
+    <app-todo-list-ion-list [todoList]="tomorrowTodoList" title="Zítra" (onItemArchiveEvent) = "onItemArchive($event)"></app-todo-list-ion-list>
+    <app-todo-list-ion-list [todoList]="nextTodoList" title="Následující dny" (onItemArchiveEvent) = "onItemArchive($event)"></app-todo-list-ion-list>
+</section>
+.<section *ngIf="filterDate">
+    <app-todo-list-ion-list [todoList]="todoList" [title]="(filterDate  | date: 'dd.MM.yyyy')" (onItemArchiveEvent) = "onItemArchive($event)"></app-todo-list-ion-list>
+</section>
 
 <!-- Tagy otevre se modal a tam bude vyber tagu, a hned tam bude moznost i zalozit tag -->
